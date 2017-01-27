@@ -1,0 +1,48 @@
+<div class="row">
+	<a style="float:right" href="/" data-method="delete">Logout</a>
+</div>
+
+<h2>Doctor's Appointments</h2>
+<div class= "filter">
+
+</div>
+<div class= "allappointments">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Patient Name</th>
+            <th>Complaint</th>
+        </tr>
+        <tbody ng-repeat = "appt in appts | filter:filter_bd track by $index">
+          <tr>  
+            <td>{{appt.date | date: "MMM. dd, yyyy"}}</td>
+            <td>{{appt.time | date: "h:mm a"}}</td>
+            <td>{{appt.name}}</td>
+            <td>{{appt.complaint}}<button ng-click="removeAppt(appt._id)">Delete</button></td>
+        	</tr>
+    </table>
+</div>
+<br>
+<br>
+<br>
+<label>Search: <input ng-model="searchText" , placeholder="search name/complaint"></label>
+<table id="searchTextResults">
+  <tr><th>Name</th><th>Complaint</th></tr>
+  <tr ng-repeat="appt in appts | filter:searchText">
+    <td>{{appt.name}}</td>
+    <td>{{appt.complaint}}</td>
+  </tr>
+</table>
+<!-- <table id="searchObjResults">
+  <tr><th>Patient Name</th><th>Complaint</th></tr>
+  <tr ng-repeat="appt in appts">
+    <td>{{appt.name}}</td>
+    <td>{{appt.complaint}}</td>
+  </tr>
+  
+</table> -->
+
+<br><br>
+
+<a href="#!/appointments/new">Add New Appointment</a>

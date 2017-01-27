@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app= "myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Doctor's Appt</title>
+        <!-- Angular from bower_components, otherwise find the CDN -->
+        <script src="angular/angular.js"></script>
+        <script src="angular-route/angular-route.js"></script>
+        <script src = 'angular-cookies/angular-cookies.js'></script>
+        <!-- End Bower Components -->
+        <script src="assets/app.js" charset="utf-8"></script>
+
+        <script type="text/javascript" src="assets/factories/theFactory.js"></script>
+        <script type="text/javascript" src="assets/factories/userFactory.js"></script>        
+        <script type="text/javascript" src="assets/controllers/appointmentController.js"></script>
+        <script type="text/javascript" src="assets/controllers/newController.js"></script>
+        <script type="text/javascript" src="assets/controllers/loginController.js"></script>
+
+
+
+    </head>
+    <body>
+
+        <div ng-view></div>
+
+    </body>
+</html>

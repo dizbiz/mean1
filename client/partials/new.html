@@ -1,0 +1,16 @@
+<div >
+    <form name="newAppt">
+        Date <input type='date' ng-model="newAppt.date" minDate: 1>
+       	Time <input type="time" ng-model= 'newAppt.time'>
+        Name <input type="text" ng-model = 'newAppt.name'>
+        Complaint <input type="text" ng-model = 'newAppt.complaint' required minlength="10"><br>
+        
+        <br>
+        <button ng-click="deleteAppt()"> Cancel Appointment </button>
+        <button ng-click="addAppt()"> Add Appointment </button>
+    </form>
+    <div ng-messages="newAppt.complaint.$error" role="alert" ng-messages-multiple>
+    	<p ng-message='minlength'>The complaint must be 10 characters.</p>
+     	<p ng-message='required'>The complaint is required.</p>
+   	</div> 
+</div>
